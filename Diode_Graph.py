@@ -17,8 +17,8 @@ with open("DIODE1.txt", newline='') as csvfile:
             #do something idk what yet
         else:
             t = int(row[0])
-            min = int(t/microSecondToMinute)
-            sec = int((t%microSecondToMinute)/microsecondToSecond)
+            min = int(t/microsecondToMinute)
+            sec = int((t%microsecondToMinute)/microsecondToSecond)
             mic = t%microsecondToSecond
             readTime = datetime.time(minute=min, second=sec, microsecond=mic)
             readBoard = row[1]
