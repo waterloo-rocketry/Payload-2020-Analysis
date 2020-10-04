@@ -12,9 +12,9 @@ with open("DIODE1.txt", newline='') as csvfile:
     dataArray = []
     data = csv.reader(csvfile, delimiter=':')
     for row in data:
-        if(row[0] == "testStarted"):
+        if row[0] == "testStarted":
             print("begin")
-            #do something idk what yet
+            #insert some functionality here in the future (if needed); it does nothing currently.
         else:
             t = int(row[0])
             min = int(t/microsecondToMinute)
