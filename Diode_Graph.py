@@ -5,9 +5,10 @@ import numpy as np
 import plotly.express as px
 import pandas as pd
 
-millisecondToHour = 60*60*1000
+millisecondToHour = 60*60*1000 #Conversion Factor from millisecond to hour
 millisecondToMinute = 60*1000 #Conversion Factor from microsecond to minute 
 millisecondToSecond = 1000 #Conversion Factor from microsecond to second
+
 with open("DIODE3.txt", newline='') as csvfile:
     timeArray = []
     dataArray = []
