@@ -1,6 +1,3 @@
-Python 3
-
-External Dependencies:
-- NumPy
-- Plotly
-- Pandas
+numPy
+pandas
+plotly
