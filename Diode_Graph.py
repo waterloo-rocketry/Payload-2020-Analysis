@@ -4,18 +4,18 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 #Enter desired filename here
-filename = "DIODE-2020-11-06"
+filename = "DIODE TEST 2020-10-06"
 
 
 millisecondToHour = 60*60*1000 #Conversion Factor from millisecond to minute 
 millisecondToMinute = 60*1000 #Conversion Factor from millisecond to minute 
 millisecondToSecond = 1000 #Conversion Factor from millisecond to second
-with open("test_data/{}.txt".format(filename), newline='') as csvfile:
+with open("Photodiode Test Data/{}.txt".format(filename), newline='') as csvfile:
     timeArray = []
     dataArray = []
-    count = 0
+    #count = 0  --- Debug Tool
     data = csv.reader(csvfile, delimiter=':')
-    sections = 0
+    #sections = 0   --- Debug Tool
     for row in data:
         if row[0] == "testStarted":
             print("begin")
@@ -24,7 +24,7 @@ with open("test_data/{}.txt".format(filename), newline='') as csvfile:
             hour = int(t/millisecondToHour)
             min = int(t%millisecondToHour/millisecondToMinute)
             sec = int((t%millisecondToHour%millisecondToMinute)/millisecondToSecond)
-            mic = t%millisecondToSecond*millisecondToSecond
+            mic = t%millisecondToSecond*millisecondToSecond #MillisecondToSecond = MicrosecondToSecond = 1000
             readTime = datetime.time(hour=hour, minute=min, second=sec, microsecond=mic)
             readBoard = row[1]
             timeArray.append(readTime)
