@@ -43,11 +43,11 @@ with open("Photodiode Test Data/{}.txt".format(filename), newline='') as csvfile
                 datacluster.append((row[0],row[1])) #Append current row to datacluster
             else:
                 datacluster.append((row[0],row[1])) #Append current row to datacluster
-                tangentialSimilarity(datacluster, 0.05, trimmed) #Arbitrary Cutoff Value
+                tangentialSimilarity(datacluster, 0.1, trimmed) #Arbitrary Cutoff Value; delta y/delta x
                 #trimmed.write(str(oddMedian(datacluster)[0])+":"+str(oddMedian(datacluster)[1])+"\n") #Write the median to the trimmed file
                 datacluster=[] #Clear the cluster
     if (len(datacluster)>0):
-        tangentialSimilarity(datacluster, 0.05, trimmed)
+        tangentialSimilarity(datacluster, 0.1, trimmed)
         #trimmed.write(str(oddMedian(datacluster)[0])+":"+str(oddMedian(datacluster)[1])+"\n") #Process the remaining points in the cluster
 print("end")
 trimmed.close()
