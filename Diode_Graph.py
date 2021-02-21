@@ -21,11 +21,11 @@ with open(f"Photodiode_Test_Data/{filename}.txt") as csvfile:
             print("begin")
         else:
             t = int(row[0])
-            hour = int(t/millisecondToHour)
-            minute = int(t%millisecondToHour/millisecondToMinute)
-            sec = int((t%millisecondToHour%millisecondToMinute)/millisecondToSecond)
-            mic = t%millisecondToSecond*millisecondToSecond #MillisecondToSecond = MicrosecondToSecond = 1000
-            readTime = datetime.time(hour=hour, minute=minute, second=sec, microsecond=mic)
+            hour = int(t / millisecondToHour)
+            minute = int(t % millisecondToHour / millisecondToMinute)
+            sec = int((t % millisecondToHour % millisecondToMinute) / millisecondToSecond)
+            mic = t % millisecondToSecond * millisecondToSecond #MillisecondToSecond = MicrosecondToSecond = 1000
+            readTime = datetime.time(hour = hour, minute = minute, second = sec, microsecond = mic)
             readBoard = row[1]
             timeArray.append(readTime)
             dataArray.append(readBoard)
